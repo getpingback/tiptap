@@ -80,7 +80,7 @@ export class PureEditorContent extends React.Component<EditorContentProps, Edito
     // a lifecycle method.
     if (this.initialized) {
       queueMicrotask(() => {
-        flushSync(fn)        
+        flushSync(fn)
       })
     } else {
       fn()
@@ -111,6 +111,8 @@ export class PureEditorContent extends React.Component<EditorContentProps, Edito
   }
 
   componentWillUnmount() {
+    this.initialized = false
+
     const { editor } = this.props
 
     if (!editor) {
