@@ -63,9 +63,11 @@ class ReactNodeView extends NodeView<
         console.log('ReactNodeViewProvider (element) ==> ', element)
         console.log('ReactNodeViewProvider (this.contentDOMElement) ==> ', this.contentDOMElement)
         console.log('ReactNodeViewProvider (element.firstChild) ==> ', element?.firstChild)
-      if (element && this.contentDOMElement && element.firstChild !== this.contentDOMElement) {
-          console.log('Entrou no if')
-          element.appendChild(this.contentDOMElement)
+        if (element && this.contentDOMElement && element.firstChild !== this.contentDOMElement) {
+          console.log('Removido o appendChild')
+          console.log('this.contentDOMElement.innerHTML', this.contentDOMElement.innerHTML)
+          element.innerHTML = this.contentDOMElement.innerHTML || ''
+          // element.appendChild(this.contentDOMElement)
         }
       }
 
