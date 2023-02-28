@@ -60,7 +60,11 @@ class ReactNodeView extends NodeView<
       const Component = this.component
       const onDragStart = this.onDragStart.bind(this)
       const nodeViewContentRef: ReactNodeViewContextProps['nodeViewContentRef'] = element => {
-        if (element && this.contentDOMElement && element.firstChild !== this.contentDOMElement) {
+        console.log('ReactNodeViewProvider (element) ==> ', element)
+        console.log('ReactNodeViewProvider (this.contentDOMElement) ==> ', this.contentDOMElement)
+        console.log('ReactNodeViewProvider (element.firstChild) ==> ', element?.firstChild)
+      if (element && this.contentDOMElement && element.firstChild !== this.contentDOMElement) {
+          console.log('Entrou no if')
           element.appendChild(this.contentDOMElement)
         }
       }
