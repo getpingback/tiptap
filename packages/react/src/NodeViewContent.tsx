@@ -11,8 +11,6 @@ export const NodeViewContent: React.FC<NodeViewContentProps> = props => {
   const Tag = props.as || 'div'
   const { nodeViewContentRef } = useReactNodeView()
 
-  console.log('NodeViewContent (props) ==>', props)
-
   return (
     <Tag
       {...props}
